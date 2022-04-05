@@ -3,21 +3,17 @@ import {
   Grid,
   Box,
   Typography,
-  Card,
-  Button,
-  TextField,
- FormGroup,Checkbox,FormControlLabel
+  FormGroup,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
-import Image from "mui-image";
-
 
 export default function Orders() {
-    const [checked, setChecked] = React.useState(true);
+  const [checked, setChecked] = React.useState(true);
 
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-
-    };
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
   return (
     <>
       {/* <Grid container alignItems="center" mt={5}> */}
@@ -223,8 +219,6 @@ export default function Orders() {
                   label="Seafood Qty"
                   onChange={handleChange}
                 />
-                
-             
               </FormGroup>
             </Grid>
           </Grid>

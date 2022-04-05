@@ -3,14 +3,10 @@ import {
   Grid,
   Box,
   Typography,
-  Card,
   Button,
-  TextField,
-  CardContent,
-  CardMedia,
   Badge,
 } from "@mui/material";
-import Image from "mui-image";
+
 
 export default function SideBar() {
   return (

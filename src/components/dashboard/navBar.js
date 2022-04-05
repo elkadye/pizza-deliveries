@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Typography, Badge } from "@mui/material";
-import Image from "mui-image";
+import { Grid, Typography } from "@mui/material";
+
 
 
 const NavBar = () => {
@@ -16,7 +16,7 @@ const NavBar = () => {
                 <Typography variant="h2">OBSD</Typography>
               </Grid>
               <Grid item p={2}>
-                <img src="/img/logo.png" />
+                <img src="/img/logo.png" alt="logo"/>
               </Grid>
             {/* </Grid> */}
           </Grid>

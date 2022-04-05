@@ -18,3 +18,19 @@ code {
   color: white;
   font-size: 17px;
 }
+
+.subtotal{
+  font-size: 37px;
+}
+
+.checkoutTotal{
+  border-top: 2px solid rgb(134, 113, 113)
+}
+
+.checkoutitems{
+   border-left: 2px solid rgb(134, 113, 113)
+}
+.checkoutForm{
+  background-color:rgb(255, 255, 255);
+  font-size: 50px;
+}

@@ -1,16 +1,21 @@
-// import logo from './logo.svg';
-// import ReactDOM from "react-dom";
-import './App.css';
+import "./App.css";
 import React from "react";
 
+
+import { Link, Routes, Route } from "react-router-dom";
+
 import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard/dashboard"
+import Dashboard from "./Pages/Dashboard/dashboard";
+import Checkout from "./Pages/checkout";
 
 function App() {
   return (
     <>
-      <Dashboard />
-      {/* <Home /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
     </>
   );
 }
