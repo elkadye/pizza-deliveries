@@ -1,11 +1,13 @@
 import React from "react";
 import { Grid } from "@mui/material";
+
 import Navbar from "../components/nav";
-import OrderItems from "../components/orderItems";
+import OrderItems from "../components/cartItems";
 import CheckoutForm from "../components/checkoutForm";
 
 
 export default function Checkout() {
+  
   return (
     <>
       <Grid container direction="column">
@@ -20,7 +22,7 @@ export default function Checkout() {
             <CheckoutForm />
           </Grid>
           <Grid item xs={12} md={3}>
-            <OrderItems />
+            <OrderItems/>
           </Grid>
           <Grid item xs={0} md={2} />
         </Grid>

@@ -1,80 +1,11 @@
 import * as React from "react";
-import { Grid, Typography, Card, Button, TextField } from "@mui/material";
-import Image from "mui-image";
+import { Grid, Button } from "@mui/material";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Products } from "../actions/products.actions.js";
-import MenuProductCard from "./menu.product.card";
+import { GetProducts } from "../actions/products.actions.js";
 
-function MenuRow() {
-  return (
-    <React.Fragment>
-      <Grid item container xs={12} sm={6} md={4} pb={3}></Grid>
-      <Grid item container xs={12} sm={6} md={4} pb={3}>
-        <Card>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Image src="/img/pizza_2.png" width="auto" height="auto" />
-            </Grid>
-            <Grid item xs={6} container direction="column">
-              <Grid Item>
-                <Typography variant="h5"> Title</Typography>
-              </Grid>
-              <Grid Item>
-                <Typography variant="h6">Shrimp, Squid, Pineapple</Typography>
-              </Grid>
-              <Grid Item>
-                <Typography>Price: LE. 100.00</Typography>
-              </Grid>
-              <Grid Item container direction="row" alignItems="center">
-                <Grid item xs={3}>
-                  +
-                </Grid>
-                <Grid item xs={6}>
-                  <TextField id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item xs={3}>
-                  -
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-      <Grid item container xs={12} sm={6} md={4} pb={3}>
-        <Card>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Image src="/img/pizza_2.png" width="auto" height="auto" />
-            </Grid>
-            <Grid item xs={6} container direction="column">
-              <Grid Item>
-                <Typography variant="h5"> Title</Typography>
-              </Grid>
-              <Grid Item>
-                <Typography variant="h6">Shrimp, Squid, Pineapple</Typography>
-              </Grid>
-              <Grid Item>
-                <Typography>Price: LE. 100.00</Typography>
-              </Grid>
-              <Grid Item container direction="row" alignItems="center">
-                <Grid item xs={3}>
-                  +
-                </Grid>
-                <Grid item xs={6}>
-                  <TextField id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item xs={3}>
-                  -
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-    </React.Fragment>
-  );
-}
+import MenuProductCard from "./menu.product.card";
 
 function ButtonRow() {
   return (
@@ -158,7 +89,7 @@ export default function Menu() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(Products()), []);
+  useEffect(() => dispatch(GetProducts()), []);
 
   console.log(products);
   return (
@@ -183,10 +114,6 @@ export default function Menu() {
                 <MenuProductCard product={product} />
               </Grid>
             ))}
-
-            {/* <MenuRow />
-            <MenuRow />
-            <MenuRow /> */}
           </Grid>
         </Grid>
 

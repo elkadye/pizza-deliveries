@@ -12,14 +12,20 @@ import { createStore, compose, applyMiddleware } from "redux";
 import { reducers } from "./reducers";
 import thunk from "redux-thunk";
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+
 // const store = createStore(
-//   reducers,compose(applyMiddleware(thunk)),
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   reducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // );
 
-const store = createStore(
-  reducers,compose(applyMiddleware(thunk))
-);
+// const store = createStore(
+//   reducers,
+//   compose(applyMiddleware(thunk)),
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
 
 ReactDOM.render(
   <React.StrictMode>

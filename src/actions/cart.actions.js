@@ -1,68 +1,66 @@
-const allProducts = [
-  {id: 1,
+const allItems = [
+  {
+    id: 1,
     Category: "Pizza",
     Title: "Seafood Pizza",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
+    Qty: 1,
     Image: "/img/pizza_2.png",
-},
-  {id: 2,
+  },
+  {
+    id: 2,
     Category: "Pizza",
     Title: "Meat Pizza",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
+    Qty: 2,
     Image: "/img/pizza_2.png",
   },
-  {id: 3,
+  {
+    id: 3,
     Category: "Pizza",
     Title: "Veggi Pizza",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
+    Qty: 1,
     Image: "/img/pizza_2.png",
   },
-  {id: 4,
+  {
+    id: 4,
     Category: "Pizza",
     Title: "Cheese Pizza",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
+    Qty: 4,
     Image: "/img/pizza_2.png",
   },
-  {id: 5,
+  {
+    id: 5,
     Category: "Burger",
     Title: "Fish Burger",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
+    Qty: 2,
     Image: "/img/pizza_2.png",
   },
-  {id: 6,
+  {
+    id: 6,
     Category: "Burger",
     Title: "Meat Burger",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
-    Image: "/img/pizza_2.png",
-  },
-  {id: 7,
-    Category: "Burger",
-    Title: "Chicken Burger",
-    Description: "Shrimp, Squid,Pineapple",
-    Price: 100,
-    Image: "/img/pizza_2.png",
-  },
-  {id: 8,
-    Category: "Burger",
-    Title: "Cheese Burger",
-    Description: "Shrimp, Squid,Pineapple",
-    Price: 100,
+    Qty: 6,
     Image: "/img/pizza_2.png",
   },
 ];
 
 
-export const GetProducts = () =>(dispatch) => {
-  const products = allProducts;
-  console.log(products);
+export const GetCartItems = () =>(dispatch) => {
+  const cartItems = allItems
+  console.log(cartItems);
   dispatch({
     type: "FETCH_ALL",
-    payload: products,
+    payload: cartItems,
   });
 };

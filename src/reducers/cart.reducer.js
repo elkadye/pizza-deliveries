@@ -1,11 +1,5 @@
-const orderItem={
-  Title: "Seafood Pizza",
-  Description: "Shrimp, Squid,Pineapple",
-  Price: 100,
-  Image: "/img/pizza_2.png"
-}
 
-const orderReducer=(state=1,action) =>{
+const cartReducer=(state=[],action) =>{
     switch (action.type) {
         case "FETCH_ALL":
         case "ADD_ITEM":
@@ -17,4 +11,4 @@ const orderReducer=(state=1,action) =>{
             return state;
     }
 }
-export default orderReducer;
+export default cartReducer;
