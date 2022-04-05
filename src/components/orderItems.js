@@ -4,6 +4,10 @@ import Image from "mui-image";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { Products } from "../actions/products.actions.js";
+
 
 function Items() {
   return (
@@ -71,11 +75,15 @@ const props={
   Image: "/img/pizza_2.png"
 }
 
-export default function MenuItem(props) {
 
-    
+
+
+export default function OrderItems(props) {
+  const order = useSelector(state => state.orders);
+
   return (
     <>
+      <Typography> Order num: {order} </Typography>
       <Grid container direction="column" className="checkoutitems">
         <Items />
         <Items />

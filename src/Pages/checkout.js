@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import Navbar from "../components/nav";
-import MenuItem from "../components/menuitem";
+import OrderItems from "../components/orderItems";
 import CheckoutForm from "../components/checkoutForm";
 
 
@@ -17,10 +17,10 @@ export default function Checkout() {
         <Grid item container>
           <Grid item xs={0} md={2} />
           <Grid item xs={12} md={5}>
-            <CheckoutForm/>
+            <CheckoutForm />
           </Grid>
           <Grid item xs={12} md={3}>
-            <MenuItem />
+            <OrderItems />
           </Grid>
           <Grid item xs={0} md={2} />
         </Grid>
