@@ -92,8 +92,8 @@ export const GetProducts = () =>(dispatch) => {
 //     });
  
 //   }
-export const changeOrderQty=(id,q)=>{
-  const order ={id,q}
+export const changeOrderQty=(id,qty)=>{
+  const order ={id,qty}
   return {
     payload:order,
     type: 'CHANGE_ORDER_QTY'

@@ -6,10 +6,16 @@ const productReducer=(state=[],action) =>{
       case "DELETE_PRODUCT":
         return action.payload;
       case "CHANGE_ORDER_QTY":
-        //   const OrderItem = state.filter
+          const id=action.payload.id
+          const qty=action.payload.qty
+        const OrderItem = state.map(item=>{
+            if(item.id === id){
+            return { ...item, orderQty: this.orderQty + qty };
+        }else{return item}
+    })
         console.log("CHANGE_ORDER_QTY")
-        console.log(action.payload)
-          return state
+        console.log(action.payload.id)
+          return OrderItem
 
       default:
         return state;
