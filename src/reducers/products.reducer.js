@@ -10,11 +10,11 @@ const productReducer=(state=[],action) =>{
           const qty=action.payload.qty
         const OrderItem = state.map(item=>{
             if(item.id === id){
-            return { ...item, orderQty: this.orderQty + qty };
+            return { ...item, orderQty: item.orderQty + qty };
         }else{return item}
     })
         console.log("CHANGE_ORDER_QTY")
-        console.log(action.payload.id)
+        console.log(OrderItem)
           return OrderItem
 
       default:

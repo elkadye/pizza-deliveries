@@ -86,6 +86,7 @@ export default function MenuProductCard({ product }) {
               color="primary"
               aria-label="upload picture"
               component="span"
+              disabled={product.orderQty? false: true}
             >
               <RemoveIcon />
             </IconButton>
