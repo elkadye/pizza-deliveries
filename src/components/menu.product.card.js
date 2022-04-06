@@ -1,11 +1,27 @@
 import * as React from "react";
-import { Grid, Typography,TextField,Card,CardActions,IconButton } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  TextField,
+  Card,
+  CardActions,
+  IconButton,
+} from "@mui/material";
 import Image from "mui-image";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch, useSelector } from "react-redux";
+import {changeOrderQty} from "../actions/products.actions"
 
-export default function MenuProductCard({product}) {  
-       console.log(product)
+export default function MenuProductCard({ product }) {
+  console.log(product);
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+
+  // function changeOrderQty(q) {
+  //   dispatch(changeOrderQty(product.id, q));
+  //   console.log(q);
+  // }
   return (
     <Card>
       <Grid container spacing={2}>
@@ -39,6 +55,8 @@ export default function MenuProductCard({product}) {
             xs={4}
           >
             <IconButton
+              // onClick={() => changeOrderQty(1)}
+              onClick={() => dispatch(changeOrderQty(product.id, 1))}
               color="primary"
               aria-label="upload picture"
               component="span"
@@ -53,8 +71,8 @@ export default function MenuProductCard({product}) {
             justifyContent="center"
             alignItems="center"
           >
-            <TextField id="outlined-basic" variant="outlined" />
-            
+            {/* <TextField id="outlined-basic" variant="outlined" /> */}
+            <Typography>{product.orderQty}</Typography>
           </Grid>
           <Grid
             item
@@ -64,6 +82,7 @@ export default function MenuProductCard({product}) {
             xs={4}
           >
             <IconButton
+              onClick={() => dispatch(changeOrderQty(product.id, -1))}
               color="primary"
               aria-label="upload picture"
               component="span"
@@ -71,7 +90,6 @@ export default function MenuProductCard({product}) {
               <RemoveIcon />
             </IconButton>
           </Grid>
-
         </Grid>
       </CardActions>
     </Card>
