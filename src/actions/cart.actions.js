@@ -1,7 +1,7 @@
 const allItems = [
   {
     id: 1,
-    Category: "Pizza",
+    Category: "Pizza", 
     Title: "Seafood Pizza",
     Description: "Shrimp, Squid,Pineapple",
     Price: 100,
@@ -56,11 +56,19 @@ const allItems = [
 ];
 
 
-export const GetCartItems = () =>(dispatch) => {
-  const cartItems = allItems
-  console.log(cartItems);
-  dispatch({
-    type: "FETCH_CART",
-    payload: cartItems,
-  });
+// export const GetCartItems = () =>(dispatch) => {
+//   const cartItems = allItems
+//   console.log(cartItems);
+//   dispatch({
+//     type: "FETCH_CART",
+//     payload: cartItems,
+//   });
+// };
+
+export const ADD_CART_ITEMS = (products) => {
+  const cartItems= {products}
+  return {
+    type: "ADD_CART_ITEMS",
+    payload: cartItems
+  };
 };

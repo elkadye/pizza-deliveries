@@ -83,15 +83,6 @@ export const GetProducts = () =>(dispatch) => {
   });
 };
 
-// export const changeOrderQty = (id, q) => (dispatch) => {
-//     const orderItem = allProducts.filter;
-//     const products = 
-//     dispatch({
-//       type: "CHANGE_ORDER_QTY",
-//       payload: products
-//     });
- 
-//   }
 export const changeOrderQty=(id,qty)=>{
   const order ={id,qty}
   return {
@@ -99,3 +90,8 @@ export const changeOrderQty=(id,qty)=>{
     type: 'CHANGE_ORDER_QTY'
   };
 }
+export const GET_CART_ITEMS = (cartItems) => {
+  return {
+    type: "GET_CART_ITEMS",
+  };
+};

@@ -2,33 +2,36 @@ import * as React from "react";
 import { Grid, Typography} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { GetCartItems } from "../actions/cart.actions.js";
+import { GET_CART_ITEMS } from "../actions/products.actions.js";
 import CartItemsCard from "./cart.item.card";
 
 
 
 
 export default function CartItems() {
-  const cartItems = useSelector((state) => state.cartItems);
-  const dispatch = useDispatch();
+  // const cartItems = useSelector((state) => state.cartItems);
+  // const dispatch = useDispatch();
 
-  useEffect(() => dispatch(GetCartItems()), []);
+  // useEffect(() => dispatch(GetCartItems()), []);
 
-  console.log(cartItems);
-  const price = cartItems[0];
-  console.log(price);
+  // console.log(cartItems);
+  // const price = cartItems[0];
+  // console.log(price);
+
+ const cartItems = useSelector((state) => state.cartItems);
+ const dispatch = useDispatch();
+
+//  useEffect(() => dispatch(GET_CART_ITEMS()), []);
+ 
+ console.log(cartItems);
+
 
   return (
     <>
       <Grid container direction="column" className="checkoutitems">
         <Grid item container spacing={2}>
           {cartItems.map((item) => (
-            <Grid
-              item
-              container
-              key={item.id}
-              pb={3}
-            >
+            <Grid item container key={item.id} pb={3}>
               <CartItemsCard item={item} />
             </Grid>
           ))}
