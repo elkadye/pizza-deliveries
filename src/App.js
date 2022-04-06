@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 
 
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard/dashboard";

@@ -60,7 +60,7 @@ export const GetCartItems = () =>(dispatch) => {
   const cartItems = allItems
   console.log(cartItems);
   dispatch({
-    type: "FETCH_ALL",
+    type: "FETCH_CART",
     payload: cartItems,
   });
 };

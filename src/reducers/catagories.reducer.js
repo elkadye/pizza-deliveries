@@ -1,7 +1,7 @@
 
-const cartReducer=(state=[],action) =>{
+const catagoryReducer=(state=[],action) =>{
     switch (action.type) {
-        case "FETCH_CART":
+        case "FETCH_CAT":
         case "ADD_ITEM":
         case "UPDATE_ITEM":
         case "DELETE_ITEM":
@@ -11,4 +11,4 @@ const cartReducer=(state=[],action) =>{
             return state;
     }
 }
-export default cartReducer;
+export default catagoryReducer;
