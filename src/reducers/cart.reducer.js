@@ -27,7 +27,7 @@ case "CHANGE_Cart_QTY":
       return cartItem;
       break;
       case "DELETE_CART_ITEM":
-        const itemId = action.payload.id;
+        const itemId = action.payload;
     //   const qty = action.payload.qty;
       const updatedCartItems = state.filter((item) => item.id !== itemId);
       console.log("DELETE_CART_ITEM");

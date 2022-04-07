@@ -1,9 +1,15 @@
 import React from "react";
-import { Grid, Typography, Badge } from "@mui/material";
+import { Grid, Typography, Badge, Button } from "@mui/material";
 import Image from "mui-image";
-
+import { useDispatch, useSelector } from "react-redux";
+import CartDialog from "./cartDialog";
 
 const NavBar = () => {
+  const cartItems = useSelector((state) => state.cartItems);
+   const dispatch = useDispatch();
+
+ 
+
   return (
     <>
       {/* <Grid container direction="column"> */}
@@ -28,21 +34,23 @@ const NavBar = () => {
               justifyContent="end"
               alignItems="center"
             >
-              <Grid
-                item
-                sx={{ display: { md: "block", sm: "none", xs: "none" } }}
-              >
+              <Grid item sx={{ display: { md: "block", xs: "none" } }}>
                 <Typography variant="h6">Menu</Typography>
               </Grid>
-              <Grid
-                item
-                sx={{ display: { md: "block", sm: "none", xs: "none" } }}
-              >
+              <Grid item sx={{ display: { md: "block", xs: "none" } }}>
                 <Typography variant="h6">Most Popular</Typography>
               </Grid>
               <Grid item md={3}>
-                <Badge badgeContent={4} color="primary"></Badge>
-                <Image width="30%" height="30%" src="/img/delivery.png" />
+                
+                <CartDialog />
+
+                {/* <Badge badgeContent={badgeCount} color="primary"></Badge>
+                  <Image
+                    component="button"
+                    width="30%"
+                    height="30%"
+                    src="/img/delivery.png"
+                  /> */}
               </Grid>
             </Grid>
           </Grid>
