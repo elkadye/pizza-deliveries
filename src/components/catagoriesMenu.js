@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { GetCatagories } from "../actions/catagories.actions";
 
-export default function ButtonRow() {
+export default function ButtonRow({ SetActiveCategory }) {
   const catagories = useSelector((state) => state.catagories);
   const dispatch = useDispatch();
 
@@ -22,8 +22,8 @@ export default function ButtonRow() {
             p: 2,
             m: 2,
             color: "black",
-            // textTransform: "lowercase"
           }}
+          // onClick={() => filterProducts("Popular")}
         >
           Popular
         </Button>
@@ -42,6 +42,7 @@ export default function ButtonRow() {
               color: "black",
               // textTransform: "lowercase"
             }}
+            onClick={() => SetActiveCategory(catagory.Name)}
           >
             {catagory.Name}
           </Button>
