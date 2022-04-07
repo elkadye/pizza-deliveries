@@ -23,6 +23,9 @@ export default function CartItems() {
 
  useEffect(() => console.log(cartItems), [cartItems]);
  
+   const cartTotal = cartItems.reduce((accumulator, object) => {
+     return accumulator + object.orderQty*object.Price;
+   }, 0);
  
 
 
@@ -40,7 +43,7 @@ export default function CartItems() {
         <Grid item xs={12} px={4}>
           <div className="checkoutTotal">
             <Typography variant="h5" component="p">
-              Subtotal: <span className="subtotal">700</span>
+              Subtotal: <span className="subtotal">{cartTotal}</span>
             </Typography>
           </div>
         </Grid>

@@ -21,6 +21,10 @@ const CartDialog = () => {
     return accumulator + object.orderQty;
   }, 0);
 
+     const cartTotal = cartItems.reduce((accumulator, object) => {
+     return accumulator + object.orderQty*object.Price;
+   }, 0);
+
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
 
@@ -79,6 +83,11 @@ const CartDialog = () => {
               </Grid>
             ))}
           </Grid>
+          <div className="checkoutTotal">
+            <Typography variant="h5" component="p">
+              Subtotal: <span className="subtotal">{cartTotal}</span>
+            </Typography>
+          </div>
         </DialogContent>
         <DialogActions>
           {/* <Button onClick={handleClose}>Cancel</Button> */}

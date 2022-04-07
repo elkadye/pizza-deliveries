@@ -5,8 +5,16 @@ import {
   Box,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export default function CheckoutForm() {
+  let navigate = useNavigate();
+  function navHome() {
+    navigate("/home");
+  }
+
+
   const padding = 4;
   return (
     <form className="checkoutForm">
@@ -81,8 +89,10 @@ export default function CheckoutForm() {
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="outlined" >
-            Add More items
+          <Button variant="outlined">
+            <Link to="/" underline="hover">
+              Add More items
+            </Link>
           </Button>
         </Grid>
       </Grid>
