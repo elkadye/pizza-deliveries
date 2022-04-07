@@ -33,10 +33,10 @@ export default function MenuProductCard({ product }) {
             <Typography variant="h6"> {product.Title}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>Shrimp, Squid, Pineapple</Typography>
+            <Typography>{product.Description}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>Price: LE. 100.00</Typography>
+            <Typography>Price: {product.Price}</Typography>
           </Grid>
         </Grid>
       </Grid>
@@ -86,7 +86,7 @@ export default function MenuProductCard({ product }) {
               color="primary"
               aria-label="upload picture"
               component="span"
-              disabled={product.orderQty? false: true}
+              disabled={product.orderQty ? false : true}
             >
               <RemoveIcon />
             </IconButton>

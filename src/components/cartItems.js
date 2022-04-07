@@ -2,9 +2,9 @@ import * as React from "react";
 import { Grid, Typography} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { GET_CART_ITEMS } from "../actions/products.actions.js";
-import CartItemsCard from "./cart.item.card";
 
+import CartItemsCard from "./cart.item.card";
+import { GET_CART_ITEMS } from "../actions/cart.actions";
 
 
 
@@ -21,9 +21,9 @@ export default function CartItems() {
  const cartItems = useSelector((state) => state.cartItems);
  const dispatch = useDispatch();
 
-//  useEffect(() => dispatch(GET_CART_ITEMS()), []);
+ useEffect(() => console.log(cartItems), [cartItems]);
  
- console.log(cartItems);
+ 
 
 
   return (

@@ -9,9 +9,13 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch, useSelector } from "react-redux";
+
+import { changeCartQty, deleteCartItem } from "../actions/cart.actions.js";
 
 export default function CartItemsCard({ item }) {
   console.log(item);
+  const dispatch = useDispatch();
   return (
     <Grid container spacing={2} pb={1}>
       <Grid item xs={6}>
@@ -24,10 +28,11 @@ export default function CartItemsCard({ item }) {
 
         <Grid Item container direction="row" alignItems="center">
           <Grid item>
-            <Typography>Qty: {item.Qty}</Typography>
+            <Typography>Qty: {item.orderQty}</Typography>
           </Grid>
           <Grid item>
             <IconButton
+              onClick={() => dispatch(changeCartQty(item.id, 1))}
               color="primary"
               aria-label="upload picture"
               component="span"
@@ -37,9 +42,11 @@ export default function CartItemsCard({ item }) {
           </Grid>
           <Grid item>
             <IconButton
+              onClick={() => dispatch(changeCartQty(item.id, -1))}
               color="primary"
               aria-label="upload picture"
               component="span"
+              disabled={item.orderQty ? false : true}
             >
               <RemoveIcon />
             </IconButton>
@@ -47,13 +54,15 @@ export default function CartItemsCard({ item }) {
         </Grid>
         <Grid Item container>
           <Grid item>
-            <Typography>Total: LE. {item.Qty*item.Price}</Typography>
+            <Typography>Total: LE. {item.orderQty * item.Price}</Typography>
           </Grid>
           <Grid item>
             <IconButton
               color="primary"
               aria-label="upload picture"
               component="span"
+              onClick={() => dispatch(deleteCartItem(item.id))}
+              deleteCartItem
             >
               <DeleteForeverIcon />
             </IconButton>
