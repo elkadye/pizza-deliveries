@@ -11,10 +11,11 @@ import {
 export default function SideBar() {
   return (
     <>
-     
-        <Typography pt={2} pb={3} variant="h3">Dashboard</Typography>
-     
-      <Grid container direction="column" pl={1}>
+      <Typography pt={2} pb={3} variant="h3">
+        Dashboard
+      </Typography>
+
+      <Grid container direction="column" className="darkBG" pl={1}>
         <Grid Item container>
           <Grid item xs={8}>
             <Badge badgeContent={4} color="primary">

@@ -7,11 +7,11 @@ import Orders from "../../components/dashboard/orders";
 export default function Home() {
   return (
     <>
-      <Grid container>
+      <Grid container >
         <Grid item xs={3}>
-            <div div className="darkBG">
-                <SideBar />
-            </div>
+          <div div className="darkBG">
+            <SideBar />
+          </div>
         </Grid>
         <Grid item xs={8}>
           <Orders />
