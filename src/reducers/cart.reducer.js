@@ -7,7 +7,7 @@ const cartReducer = (state = [], action) => {
       const products = action.payload.products;
       const orderItems = products.filter((item) => item.orderQty > 0);
       console.log("ADD_CART_ITEMS");
-      console.log(products);
+      console.log(orderItems);
       // console.log(state.filter((item) => item.orderQty > 0));
       return orderItems;
       break;

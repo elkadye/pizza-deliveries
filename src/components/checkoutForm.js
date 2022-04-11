@@ -50,7 +50,7 @@ export default function CheckoutForm() {
 
     },
   });
-
+ console.log(cartItems);
 
 
   return (
@@ -143,6 +143,7 @@ export default function CheckoutForm() {
             fullWidth
             variant="contained"
             color="error"
+            disabled={cartItems.length>0 ? false : true}
           >
             Checkout Now
           </Button>
