@@ -5,7 +5,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard/dashboard";
+import Dashboard from "./Dashboard/pages/dashboard";
 import Checkout from "./Pages/checkout";
 
 function App() {

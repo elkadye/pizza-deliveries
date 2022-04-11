@@ -76,12 +76,15 @@ const allProducts = [
 const productReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_PRODUCTS":
-    case "ADD_PRODUCT":
-    case "UPDATE_PRODUCT":
-    case "DELETE_PRODUCT":
-      console.log(state)
+      if(state.length>0){
+        return state
+      }
       return action.payload;
-      break;
+      break
+    case "RESET_PRODUCT_ORDER_QTY":
+      console.log("reset qty")
+      return action.payload;
+      break
     case "CHANGE_ORDER_QTY":
       const id = action.payload.id;
       const qty = action.payload.qty;

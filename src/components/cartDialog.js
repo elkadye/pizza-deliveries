@@ -21,9 +21,9 @@ const CartDialog = () => {
     return accumulator + object.orderQty;
   }, 0);
 
-     const cartTotal = cartItems.reduce((accumulator, object) => {
-     return accumulator + object.orderQty*object.Price;
-   }, 0);
+  const cartTotal = cartItems.reduce((accumulator, object) => {
+    return accumulator + object.orderQty * object.price;
+  }, 0);
 
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
@@ -65,17 +65,11 @@ const CartDialog = () => {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle
-        //  id="scroll-dialog-title"
-        >
-          Order Details
+        <DialogTitle>
+          <Typography variant="h6"> Order Details</Typography>
         </DialogTitle>
         <DialogContent dividers={scroll === "paper"}>
-          {/* <DialogContentText
-            // id="scroll-dialog-description"
-            // ref={descriptionElementRef}
-            tabIndex={-1}
-          ></DialogContentText> */}
+      
           <Grid item container spacing={2}>
             {cartItems.map((item) => (
               <Grid item container key={item.id} pb={3}>
@@ -85,14 +79,14 @@ const CartDialog = () => {
           </Grid>
           <div className="checkoutTotal">
             <Typography variant="h5" component="p">
-              Subtotal: <span className="subtotal">{cartTotal}</span>
+              Order Total: {cartTotal}
             </Typography>
           </div>
         </DialogContent>
-        <DialogActions>
+        <DialogActions className="dialogBtn" >
           {/* <Button onClick={handleClose}>Cancel</Button> */}
-          <Button>
-            <Link to="/checkout" underline="hover">
+          <Button variant="contained">
+            <Link to="/checkout" textDecoration="none">
               Checkout
             </Link>
           </Button>

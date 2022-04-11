@@ -35,3 +35,21 @@ export const GET_CART_ITEMS = (cartItems) => {
     type: "GET_CART_ITEMS",
   };
 };
+
+export const ResetProductOrderQty = () => async (dispatch) => {
+  try {
+    const { data } = await api.getProducts();
+    console.log(data);
+    //map API product and ADD order qty key to each product
+    const products = data.map((product) => {
+      return { ...product, orderQty: 0 };
+    });
+    console.log(products);
+    dispatch({
+      type: "RESET_PRODUCT_ORDER_QTY",
+      payload: products,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -1,9 +1,9 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import Navbar from "../../components/dashboard/navBar";
-import Body from "./dashboardBody";
 
-import Footer from "../../components/dashboard/footer";
+import Body from "./dashboardBody";
+import Navbar from "../components/navBar";
+import Footer from "../components/footer"
 
 export default function Dashboard() {
   return (

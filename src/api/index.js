@@ -18,7 +18,7 @@ export const getCategories = () => API.get(`/category`);
 
 //Order End points
 
-export const addOrder = () => API.post(`/order`);
+export const addOrder = (cartOrder) => API.post("/order",cartOrder);
 export const getOrder = (order_id) => API.get(`/order/${order_id}`);
 export const getOrders = () => API.get(`/order`);
 export const getCompletedOrders = () => API.get(`/order/completed`);

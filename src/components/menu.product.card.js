@@ -25,18 +25,18 @@ export default function MenuProductCard({ product }) {
   return (
     <Card>
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Image src="/img/pizza_2.png" width="auto" height="auto" />
         </Grid>
-        <Grid item xs={6} container direction="column">
+        <Grid item xs={8} container direction="column" justifyContent="center">
           <Grid Item>
-            <Typography variant="h6"> {product['name']}</Typography>
+            <Typography variant="h6"> {product["name"]}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>{product['description']}</Typography>
+            <Typography>{product["description"]}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>Price: {product['price']}</Typography>
+            <Typography>Price: {product["price"]}</Typography>
           </Grid>
         </Grid>
       </Grid>

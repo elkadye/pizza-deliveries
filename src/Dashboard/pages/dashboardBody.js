@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid } from "@mui/material";
 // import Navbar from "../components/nav";
-import SideBar from "../../components/dashboard/sideBar";
-import Orders from "../../components/dashboard/orders";
+import SideBar from "../components/sideBar";
+import Orders from "../components/orders";
 
 export default function Home() {
   return (

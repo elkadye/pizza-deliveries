@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+.sliderSpan{
+  color:#ff9200
+}
+
 .darkBG{
   background-color: #303030;
   color: white;
@@ -25,7 +29,10 @@ code {
 .subtotal{
   font-size: 37px;
 }
-
+.dialogBtn{
+  justify-content: center !important;
+  
+}
 .checkoutTotal{
   border-top: 2px solid rgb(134, 113, 113)
 }

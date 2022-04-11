@@ -9,16 +9,23 @@ export default function Slider() {
         <Grid item sm={0} md={3} />
 
         <Grid item container sm={12} md={6} mt={3} pb={5}>
-          <Grid item xs={6} container alignContent="center" alignItems="center" pt={8} pb={8}>
-            <Typography
-              variant="h3"
-              sx={{ textTransform: "uppercase" }}
-            >Enjoy our <br/> delicious <span sx={{color:"green"}}>food</span></Typography>
-            <Typography>
-              this is the content this is the content this is the content this is
-              the content this is the content this is the content this is the
-              content
+          <Grid
+            item
+            xs={6}
+            container
+            alignContent="center"
+            alignItems="center"
+            py={1}
+          >
+            <Typography variant="h3" sx={{ textTransform: "uppercase" }}>
+              Enjoy our <br />{" "}
+              <span className="sliderSpan">delicious food</span>
             </Typography>
+            {/* <Typography>
+              this is the content this is the content this is the content this
+              is the content this is the content this is the content this is the
+              content
+            </Typography> */}
           </Grid>
           <Grid item xs={6}>
             <Image src="/img/pizza_1.png" width="auto" height="auto" />

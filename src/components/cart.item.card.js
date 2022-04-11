@@ -18,16 +18,23 @@ export default function CartItemsCard({ item }) {
   const dispatch = useDispatch();
   return (
     <Grid container spacing={2} pb={1}>
-      <Grid item xs={6}>
+      <Grid item xs={4}>
         <Image src="/img/pizza_2.png" width="auto" height="auto" />
       </Grid>
-      <Grid item xs={6} container direction="column">
+      <Grid item xs={8} container direction="column">
         <Grid Item>
-          <Typography variant="h5"> {item.Title}</Typography>
+          <Typography variant="h5"> {item.name}</Typography>
         </Grid>
 
-        <Grid Item container direction="row" alignItems="center">
-          <Grid item>
+        <Grid
+          Item
+          container
+          direction="row"
+          alignItems="center"
+          pt={1}
+          spacing={2}
+        >
+          <Grid item >
             <Typography>Qty: {item.orderQty}</Typography>
           </Grid>
           <Grid item>
@@ -52,9 +59,9 @@ export default function CartItemsCard({ item }) {
             </IconButton>
           </Grid>
         </Grid>
-        <Grid Item container>
+        <Grid Item container alignItems="center">
           <Grid item>
-            <Typography>Total: LE. {item.orderQty * item.Price}</Typography>
+            <Typography>Total: LE. {item.orderQty * item.price}</Typography>
           </Grid>
           <Grid item>
             <IconButton

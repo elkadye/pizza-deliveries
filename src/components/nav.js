@@ -15,8 +15,8 @@ const NavBar = () => {
     <>
       {/* <Grid container direction="column"> */}
       <Grid item container alignItems="center" pt={3}>
-        <Grid item xs={0} md={2} />
-        <Grid item xs={12} md={8}>
+        <Grid item xs={0} md={1} />
+        <Grid item xs={12} md={10}>
           <Grid container spacing={3}>
             <Grid item container alignItems="center" xs={6} md={4}>
               <Grid item>
@@ -58,7 +58,7 @@ const NavBar = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={0} md={2} />
+        <Grid item xs={0} md={1} />
       </Grid>
     </>
   );

@@ -43,12 +43,10 @@ export default function Menu() {
   // console.log(categoryToDisplay);
   return (
     <>
-      {/* <Link to="/checkout" underline="hover">
-        {'underline="hover"'}
-      </Link> */}
+    
       <Grid container alignItems="center" mt={5}>
-        <Grid item xs={0} md={2} border={8} borderColor="success" />
-        <Grid container xs={12} md={8} spacing={5} direction="column">
+        <Grid item xs={0} md={1}  />
+        <Grid container xs={12} md={10} spacing={5} direction="column">
           <Grid
             item
             container
@@ -77,7 +75,7 @@ export default function Menu() {
           </Grid>
         </Grid>
 
-        <Grid item xs={0} md={2} />
+        <Grid item xs={0} md={1} />
       </Grid>
     </>
   );

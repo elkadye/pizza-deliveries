@@ -7,17 +7,54 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addOrder } from "../actions/order.actions";
+import { useEffect } from "react";
+import { ResetProductOrderQty } from "../actions/products.actions";
+
 
 export default function CheckoutForm() {
-  let navigate = useNavigate();
-  function navHome() {
-    navigate("/home");
-  }
+  const navigate = useNavigate();
+
+  const padding = 1;
+
+   const cartItems = useSelector((state) => state.cartItems);
+   const dispatch = useDispatch();
+
+  const formik = useFormik({
+    initialValues: {
+      name:"",
+      address:"",
+      mobile:"",
+      city:""
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .required("Required"),
+      mobile: Yup.string()
+        .required("Required"),
+      city: Yup.string()
+        .required("Required"),
+      address: Yup.string()
+        .required("Required"),
+    }),
+    onSubmit: (values) => {
+       console.log(cartItems);
+      dispatch(addOrder({ ...values, orderItems: cartItems}));
+      formik.resetForm();
+      dispatch(ResetProductOrderQty());
+       navigate("/");
+
+    },
+  });
 
 
-  const padding = 4;
+
   return (
-    <form className="checkoutForm">
+    <form onSubmit={formik.handleSubmit} className="checkoutForm">
       <Box
         py={padding}
         sx={{
@@ -26,12 +63,16 @@ export default function CheckoutForm() {
         }}
       >
         <TextField
+          error={Boolean(formik.errors.name) && formik.touched.name}
+          helperText={formik.errors.name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
           fullWidth
           required
-          id="standard-required"
-          label="Required"
-          defaultValue="Name"
+          label="Name"
           variant="standard"
+          name="name"
         />
       </Box>
       <Box
@@ -42,12 +83,16 @@ export default function CheckoutForm() {
         }}
       >
         <TextField
+          error={Boolean(formik.errors.mobile) && formik.touched.mobile}
+          helperText={formik.errors.mobile}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.mobile}
           fullWidth
           required
-          id="standard-required"
-          label="Required"
-          defaultValue="Mobile"
+          label="Mobile"
           variant="standard"
+          name="mobile"
         />
       </Box>
       <Box
@@ -58,12 +103,16 @@ export default function CheckoutForm() {
         }}
       >
         <TextField
+          error={Boolean(formik.errors.address) && formik.touched.address}
+          helperText={formik.errors.address}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.address}
           fullWidth
           required
-          id="standard-required"
-          label="Required"
-          defaultValue="Street Address"
+          label="Street Address"
           variant="standard"
+          name="address"
         />
       </Box>
       <Box
@@ -74,25 +123,41 @@ export default function CheckoutForm() {
         }}
       >
         <TextField
+          error={Boolean(formik.errors.city) && formik.touched.city}
+          helperText={formik.errors.city}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.city}
           fullWidth
           required
-          id="standard-required"
-          label="Required"
-          defaultValue="City"
+          label="City"
           variant="standard"
+          name="city"
         />
       </Box>
       <Grid container spacing={2}>
         <Grid item xs={5}>
-          <Button fullWidth variant="contained" color="error">
+          <Button
+            type="submit"
+            // onClick={formik.handleSubmit}
+            fullWidth
+            variant="contained"
+            color="error"
+          >
             Checkout Now
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="outlined">
-            <Link to="/" underline="hover">
+          <Button
+            variant="outlined"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Add More items
+            {/* <Link to="/" underline="hover">
               Add More items
-            </Link>
+            </Link> */}
           </Button>
         </Grid>
       </Grid>
