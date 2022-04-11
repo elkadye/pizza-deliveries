@@ -11,6 +11,7 @@ const cartReducer = (state = [], action) => {
       // console.log(state.filter((item) => item.orderQty > 0));
       return orderItems;
       break;
+      
 case "CHANGE_Cart_QTY":
        const id = action.payload.id;
       const qty = action.payload.qty;

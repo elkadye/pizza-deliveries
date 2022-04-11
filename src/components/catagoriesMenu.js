@@ -2,13 +2,13 @@ import * as React from "react";
 import { Grid, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { GetCatagories } from "../actions/catagories.actions";
+import { GetCategories } from "../actions/catagories.actions";
 
 export default function ButtonRow({ SetActiveCategory }) {
   const catagories = useSelector((state) => state.catagories);
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(GetCatagories()), []);
+  useEffect(() => dispatch(GetCategories()), []);
 
   console.log(catagories);
   return (
@@ -42,9 +42,9 @@ export default function ButtonRow({ SetActiveCategory }) {
               color: "black",
               // textTransform: "lowercase"
             }}
-            onClick={() => SetActiveCategory(catagory.Name)}
+            onClick={() => SetActiveCategory(catagory.name)}
           >
-            {catagory.Name}
+            {catagory.name}
           </Button>
         </Grid>
       ))}

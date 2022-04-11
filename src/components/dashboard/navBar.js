@@ -11,7 +11,6 @@ const NavBar = () => {
         <Grid item xs={0} md={2}/>
         <Grid item xs={12} md={8}>
           <Grid container spacing={3}>
-            {/* <Grid item container alignItems="center" xs={4} md={4}> */}
               <Grid item>
                 <Typography variant="h2">OBSD</Typography>
               </Grid>

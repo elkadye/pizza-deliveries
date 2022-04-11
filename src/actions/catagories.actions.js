@@ -1,3 +1,4 @@
+import * as api from "../api";
 const allCategories = [
   {
     id: 1,
@@ -25,11 +26,24 @@ const allCategories = [
   },
 ];
 
-export const GetCatagories = () => (dispatch) => {
-  const catagories = allCategories;
-  console.log(catagories);
-  dispatch({
-    type: "FETCH_CAT",
-    payload: catagories,
-  });
+// export const GetCatagories = () => (dispatch) => {
+//   const catagories = allCategories;
+//   console.log(catagories);
+//   dispatch({
+//     type: "FETCH_CAT",
+//     payload: catagories,
+//   });
+// };
+
+export const GetCategories = () => async (dispatch) => {
+  try {
+    const { data} = await api.getCategories()
+    console.log(data);
+    dispatch({
+      type: "FETCH_CAT",
+      payload: data
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };

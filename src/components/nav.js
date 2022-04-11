@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Grid, Typography, Badge, Button } from "@mui/material";
 import Image from "mui-image";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,9 +23,12 @@ const NavBar = () => {
                 <Typography variant="h2">OBSD</Typography>
               </Grid>
               <Grid item p={2}>
-                <img src="/img/logo.png" alt="logo" />
+                <Link to="/" underline="hover">
+                  <img src="/img/logo.png" alt="logo" />
+                </Link>
               </Grid>
             </Grid>
+
             <Grid
               item
               container
@@ -41,7 +45,6 @@ const NavBar = () => {
                 <Typography variant="h6">Most Popular</Typography>
               </Grid>
               <Grid item md={3}>
-                
                 <CartDialog />
 
                 {/* <Badge badgeContent={badgeCount} color="primary"></Badge>

@@ -60,7 +60,7 @@ export default function Menu() {
           </Grid>
           <Grid item container spacing={2}>
             {products
-              .filter((product) => product.Category === categoryToDisplay)
+              .filter((product) => product['category'].name === categoryToDisplay)
               .map((product) => (
                 <Grid
                   item

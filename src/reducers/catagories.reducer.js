@@ -5,6 +5,7 @@ const catagoryReducer=(state=[],action) =>{
         case "ADD_ITEM":
         case "UPDATE_ITEM":
         case "DELETE_ITEM":
+            console.log(action.payload)
             return action.payload;
         
         default:
@@ -12,3 +13,4 @@ const catagoryReducer=(state=[],action) =>{
     }
 }
 export default catagoryReducer;
+

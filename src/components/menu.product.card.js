@@ -30,13 +30,13 @@ export default function MenuProductCard({ product }) {
         </Grid>
         <Grid item xs={6} container direction="column">
           <Grid Item>
-            <Typography variant="h6"> {product.Title}</Typography>
+            <Typography variant="h6"> {product['name']}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>{product.Description}</Typography>
+            <Typography>{product['description']}</Typography>
           </Grid>
           <Grid Item>
-            <Typography>Price: {product.Price}</Typography>
+            <Typography>Price: {product['price']}</Typography>
           </Grid>
         </Grid>
       </Grid>

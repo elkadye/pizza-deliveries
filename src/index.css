@@ -19,6 +19,9 @@ code {
   font-size: 17px;
 }
 
+.sidebar{
+  height: 100vh;
+}
 .subtotal{
   font-size: 37px;
 }
