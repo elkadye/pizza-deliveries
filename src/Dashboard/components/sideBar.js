@@ -8,26 +8,39 @@ import {
 } from "@mui/material";
 
 
-export default function SideBar() {
+export default function SideBar({orders}) {
   return (
     <>
       <Typography p={3} variant="h3">
         Dashboard
       </Typography>
 
-      <Grid container direction="column" className="darkBG sidebar" pl={6} pb={4}>
-        <Grid Item container py={4}>
-          <Grid item xs={8}>
-            {/* <Badge badgeContent={4} color="primary"> */}
-              <Typography variant="h5">Pending Orders</Typography>
-            {/* </Badge> */}
+      <Grid
+        container
+        direction="column"
+        className="darkBG sidebar"
+        pl={4}
+        pb={4}
+      >
+        <Grid Item container py={2}>
+          <Grid item xs={10}>
+            <Typography variant="h5">Pending Orders </Typography>
           </Grid>
-          <Grid item xs={4} color="primary">
-            <Box sx={{ backgroundColor: "primary" }}>6</Box>
+          <Grid item xs={2} color="primary">
+            <Typography>
+              {orders.filter((item) => item.completed == false).length}
+            </Typography>
           </Grid>
         </Grid>
-        <Grid Item>
-          <Typography variant="h5">Completed Orders</Typography>
+        <Grid Item container py={2}>
+          <Grid item xs={10}>
+            <Typography variant="h5">Completed Orders </Typography>
+          </Grid>
+          <Grid item xs={2} color="primary">
+            <Typography>
+              {orders.filter((item) => item.completed == true).length}
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
     </>
