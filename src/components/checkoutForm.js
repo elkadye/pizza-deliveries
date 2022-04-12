@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addOrder } from "../actions/order.actions";
+import { addOrder, getOrders } from "../actions/order.actions";
 import { useEffect } from "react";
 import { ResetProductOrderQty } from "../actions/products.actions";
 
@@ -43,9 +43,12 @@ export default function CheckoutForm() {
     }),
     onSubmit: (values) => {
        console.log(cartItems);
+
       dispatch(addOrder({ ...values, orderItems: cartItems}));
       formik.resetForm();
       dispatch(ResetProductOrderQty());
+      dispatch(getOrders());
+
        navigate("/");
 
     },
@@ -139,7 +142,7 @@ export default function CheckoutForm() {
         <Grid item xs={5}>
           <Button
             type="submit"
-            // onClick={formik.handleSubmit}
+            onClick={formik.handleSubmit}
             fullWidth
             variant="contained"
             color="error"

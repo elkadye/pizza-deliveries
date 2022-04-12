@@ -22,5 +22,5 @@ export const addOrder = (cartOrder) => API.post("/order",cartOrder);
 export const getOrder = (order_id) => API.get(`/order/${order_id}`);
 export const getOrders = () => API.get(`/order`);
 export const getCompletedOrders = () => API.get(`/order/completed`);
-export const markCompletedOrders = (order_id) => API.get(`/order/${order_id}/completed`);
+export const markCompletedOrder = (order_id) => API.get(`/order/${order_id}/completed`);
 

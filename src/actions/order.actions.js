@@ -28,3 +28,15 @@ export const getOrders = () => async (dispatch) => {
     console.log(err);
   }
 };
+
+export const markCompletedOrder = (order_id) => async (dispatch) => {
+  try {
+    const { data } = await api.markCompletedOrder(order_id);
+    dispatch({
+      type: "MARK_COMPLETED",
+      payload: data,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

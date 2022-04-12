@@ -5,9 +5,10 @@ const orderReducer = (state = [], action) => {
       return action.payload;
       break;
     case "GET_ORDERS":
-        return action.payload;
+      return action.payload;
       break;
-    case "UPDATE_ORDER":
+    case "MARK_COMPLETED":
+        return action.payload
       break;
 
     default:
