@@ -8,7 +8,7 @@ const orderReducer = (state = [], action) => {
       return action.payload;
       break;
     case "MARK_COMPLETED":
-        return action.payload
+        return state
       break;
 
     default:

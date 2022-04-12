@@ -32,7 +32,7 @@ export default function OrderCard({ order }) {
               backgroundColor: "primary.light",
             }}
           >
-            <Typography variant="h5">{order.created_at}</Typography>
+            <Typography >{order.id},{order.created_at}</Typography>
           </Box>
         </Grid>
         <Grid item pl={1}>
